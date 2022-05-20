@@ -52,14 +52,14 @@ describe("Given the getKind constroller", () => {
   });
 });
 
-describe("Given the createKind controller", () => {
-  describe("When it receives a request with a kind at body and a response", () => {
-    test("Then it should call res' status and json methods with ", () => {
-      const req = {
-        body: {
-          kind: "Dormilón",
-        },
-      };
-    });
-  });
-});
+// describe("Given the createKind controller", () => {
+//   describe("When it receives a request with a kind at body and a response", () => {
+//     test("Then it should call res' status and json methods with ", () => {
+//       const req = {
+//         body: {
+//           kind: "Dormilón",
+//         },
+//       };
+//     });
+//   });
+// });
