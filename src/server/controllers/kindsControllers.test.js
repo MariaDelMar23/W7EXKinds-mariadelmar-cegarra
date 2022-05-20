@@ -1,28 +1,10 @@
-const kindsList = [
-  {
-    id: 1,
-    kind: "Gatoperro",
-  },
-  {
-    id: 2,
-    kind: "Buena gente",
-  },
-  {
-    id: 3,
-    kind: "Malaje",
-  },
-  {
-    id: 4,
-    kind: "A su bola",
-  },
-];
-
+const mockKinds = require("../../mocks/kindsList");
 const { listKinds, getKind } = require("./kindsControllers");
 
 jest.mock("../../database/models/Kind", () => ({
   ...jest.requireActual("../../database/models/Kind"),
-  find: jest.fn().mockResolvedValue(kindsList),
-  findById: jest.fn().mockResolvedValue(kindsList[2]),
+  find: jest.fn().mockResolvedValue(mockKinds),
+  findById: jest.fn().mockResolvedValue(mockKinds.kinds[2]),
 }));
 
 const res = {
@@ -35,7 +17,7 @@ describe("Given the listKinds controller", () => {
     test("Then it should call res' status and json methods with 200 and a list of kinds respectively", async () => {
       const expectedStatusCode = 200;
       const expectedBody = {
-        kinds: kindsList,
+        kinds: mockKinds,
       };
 
       await listKinds(null, res);
@@ -72,6 +54,12 @@ describe("Given the getKind constroller", () => {
 
 describe("Given the createKind controller", () => {
   describe("When it receives a request with a kind at body and a response", () => {
-    test("Then it should call res' status and json methods with ", () => {});
+    test("Then it should call res' status and json methods with ", () => {
+      const req = {
+        body: {
+          kind: "Dormilón",
+        },
+      };
+    });
   });
 });

@@ -1,4 +1,4 @@
-const kindsList = {
+const mockKinds = {
   kinds: [
     {
       id: 1,
@@ -19,4 +19,4 @@ const kindsList = {
   ],
 };
 
-module.exports = kindsList;
+module.exports = mockKinds;
